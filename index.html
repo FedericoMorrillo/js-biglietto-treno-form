@@ -5,26 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calcolo del prezzo del biglietto del treno</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">  
 </head>
 
 <body>
-    <div>
-            <input id="nominativo" type="text" placeholder="nome e cognome">
-            <input id="km" type="number" placeholder="km">
-            <label for="anni">età:</label>
-            <select name="anni" id="anni">
-                <option value="minorenne">Minorenne</option>
-                <option value="maggiorenne">Maggiorenne</option>
-                <option value="over65">Over65</option>
-            </select>
-            <button id="genera" type="button">Genera</button>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <header>
+    <h2 class="text-center pt-3 text-white">Calcola il prezzo del tuo biglietto</h2>
+    </header>
+    <main>
+        <div class="container d-flex flex-wrap px-0 py-3 bordo text-black justify-content-center">
+            <div class="col-4 text-center ">
+                <label> Nome e Cognome:</label>
+                <input id="nominativo" type="text" placeholder="nome e cognome">
+            </div>   
+            <div class="col-4 text-center "> 
+                <label for="km"> Km da percorrere:</label>
+                <input id="km" type="number" placeholder="km">
+            </div>    
+            <div class="col-4 text-center centro">   
+                <label>età:</label>
+                <select name="anni" id="anni">
+                    <option value="minorenne">Minorenne</option>
+                    <option value="maggiorenne">Maggiorenne</option>
+                    <option value="over65">Over65</option>
+                </select>
+            </div>
+            <div>     
+                <button id="genera" class="pr-2 btn" type="button">Genera</button>
+            </div>
+            <div>     
+                <button id="annulla" class="btn" type="button">Annulla</button>
+            </div>        
+        </div>
+        <h2 class="pt-3 text-center text-white">Il tuo biglietto</h2>
+        <div id="biglietto" class="hidden">
+            <div class="container p-4 bordo text-black">
+                <h5>DETTAGLIO PASSEGGERI</h5>
+                <div class="box d-flex">
+                    <div class=" col-3 passeggero p-3">
+                        <h5>NOME PASSEGGERO</h5>
+                        <div id="nome"></div>
+                    </div>
+                    <div class=" col p-2">
+                        <strong>Offerta</strong>
+                        <div id="offerta" class="pt-4"></div>
+                    </div>
+                    <div class=" col p-2">
+                        <strong>Carrozza</strong>
+                        <div id="carrozza" class="pt-4"></div>
+                    </div>
+                    <div class="col p-2">
+                        <strong>Codice CP</strong>
+                        <div id="codice" class="pt-4"></div>
+                    </div>
+                    <div class="col p-2">
+                        <strong>Costo del Biglietto</strong>
+                        <div id="costo" class="pt-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <script src="js/main.js"></script>
 </body>
 
